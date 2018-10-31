@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET        /                     controllers.StarWarsController.index
+GET        /index2               controllers.StarWarsController.index2
+GET        /graphql              controllers.StarWarsController.graphql(query: String, variables: Option[String], operation: Option[String])
+POST       /graphql              controllers.StarWarsController.graphqlBody
+GET        /render-schema        controllers.StarWarsController.renderSchema
+GET        /graphiql             controllers.StarWarsController.graphiql
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)
+
+GET        /javascriptRoutes     controllers.EnvironmentController.javascriptRoutes
